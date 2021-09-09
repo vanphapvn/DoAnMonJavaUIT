@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="JaVaProjectGameCaro.Model.NguoiChoi" 
+		table="nguoichoi"  >
+		<id name="tenDangNhap" type="string" >
+			<column length="15" name="tendangnhap" not-null="true" />
+			<generator class="assigned" />
+		</id>
+		<property name="matKhau" type="string"  >
+			<column length="30" name="matkhau" />
+		</property>
+		<property name="tenHienThi" type="string">
+			<column length="30" name="tenhienthi" />
+		</property>
+		<many-to-one class="JaVaProjectGameCaro.Model.LoaiXepHang"
+			name="loaiXepHang" fetch="join" lazy="false" cascade="none">
+			<column name="idxephang" length="15" not-null="true" />
+		</many-to-one>
+
+
+		<property name="diemXepHang" type="int">
+			<column length="15" name="diemxephang" />
+		</property>
+		
+		<property name="soLanThang" type="int">
+			<column length="15" name="solanthang" />
+		</property>
+		
+		<property name="soLanThua" type="int">
+			<column length="15" name="solanthua" />
+		</property>
+		
+
+	</class >
+</hibernate-mapping>
